@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "b19db7c8-68ad-45a2-9c18-9b7ea4d21ead",
+  "alias": "CustomLinksWebPart",
+  "componentType": "WebPart",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart", "TeamsPersonalApp", "TeamsTab", "SharePointFullPage"],
+  "supportsThemeVariants": true,
+
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Advanced
+    "group": { "default": "Advanced" },
+    "title": { "default": "IMC-Quick Links" },
+    "description": { "default": "Custom Quick Links Row for IMC" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "title": "",
+      "layout": "tiles",
+      "openInNewTab": false,
+      "tile1Title": "Employee Handbook",
+      "tile1Description": "Policies, procedures and our shared values",
+      "tile1Url": "#",
+      "tile2Title": "My Benefits",
+      "tile2Description": "Health, wellness and financial resources",
+      "tile2Url": "#",
+      "tile3Title": "Forms & Documents",
+      "tile3Description": "PTO requests, expense reimbursements and more",
+      "tile3Url": "#",
+      "tile4Title": "Training & Development",
+      "tile4Description": "Grow your skills and your impact",
+      "tile4Url": "#",
+      "tile5Title": "Calendar",
+      "tile5Description": "Holidays, events and important dates",
+      "tile5Url": "#",
+      "tile6Title": "Staff Directory",
+      "tile6Description": "Connect with the IMC team",
+      "tile6Url": "#",
+      "useCustomJson": false,
+      "linksJson": ""
+    }
+  }]
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "sharepoint-custom-links-client-side-solution",
+    "id": "aad3344c-68aa-4c5a-95bc-4bd8a48f4a9d",
+    "version": "1.0.1.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.23.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "sharepoint-custom-links description"
+      },
+      "longDescription": {
+        "default": "sharepoint-custom-links description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "sharepoint-custom-links Feature",
+        "description": "The feature that activates elements of the sharepoint-custom-links solution.",
+        "id": "8e52cd1a-541f-4798-92da-39e570e037df",
+        "version": "1.0.1.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/sharepoint-custom-links.sppkg"
+  }
+}
