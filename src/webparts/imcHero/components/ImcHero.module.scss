@@ -1,0 +1,382 @@
+.heroWrapper {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  container-type: inline-size;
+  container-name: heroContainer;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.07), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  transition: box-shadow 0.3s ease, margin-bottom 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 8px 28px -6px rgba(15, 23, 42, 0.12), 0 4px 10px -2px rgba(15, 23, 42, 0.05);
+  }
+
+  &.flushBottom {
+    margin-bottom: -24px;
+  }
+
+  &.tightBottom {
+    margin-bottom: -12px;
+  }
+
+  &.noneBottom {
+    margin-bottom: 0;
+  }
+
+  &.normalBottom {
+    margin-bottom: 24px;
+  }
+}
+
+.heroContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  min-height: 380px;
+  isolation: isolate;
+
+  &.compact {
+    min-height: 300px;
+  }
+
+  &.medium {
+    min-height: 380px;
+  }
+
+  &.tall {
+    min-height: 480px;
+  }
+}
+
+/* Image Layer - Extends across 68% of the hero for a seamless overlap blend */
+.imageLayer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 68%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+
+  &.imageRight {
+    right: 0;
+    left: auto;
+  }
+
+  &.imageLeft {
+    left: 0;
+    right: auto;
+  }
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  .heroWrapper:hover & {
+    transform: scale(1.02);
+  }
+}
+
+/* Smooth multi-stop gradient overlay on top of the image */
+.imageGradientOverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Content Panel - Completely transparent background on top of the shared canvas */
+.contentPanel {
+  position: relative;
+  z-index: 3;
+  width: 52%;
+  max-width: 620px;
+  padding: clamp(28px, 4vw, 48px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &.contentLeft {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  &.contentRight {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  &.lightTheme {
+    color: #0d2755;
+
+    .overlineText {
+      color: #1e3a5f;
+    }
+
+    .headline {
+      color: #0d2755;
+    }
+
+    .description {
+      color: #273a5a;
+    }
+
+    .highlightItem {
+      color: #0d2755;
+    }
+  }
+
+  &.darkTheme {
+    color: #ffffff;
+
+    .overlineText {
+      color: #38bdf8;
+    }
+
+    .headline {
+      color: #ffffff;
+    }
+
+    .description {
+      color: #e2e8f0;
+    }
+
+    .highlightItem {
+      color: #f1f5f9;
+    }
+  }
+}
+
+/* Row 1: Overline / Tagline */
+.overlineRow {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.overlineText {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.overlineDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Row 2: Main Headline */
+.headline {
+  margin: 0 0 14px 0;
+  font-size: clamp(24px, 3.2vw, 38px);
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+/* Row 3: Description */
+.description {
+  margin: 0 0 18px 0;
+  font-size: clamp(14px, 1.4vw, 16px);
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 540px;
+}
+
+/* Highlights Row (As seen in IMCHomePage.pdf) */
+.highlightsContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.highlightItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+/* CTA Container */
+.ctaContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.primaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid transparent;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.18);
+    text-decoration: none;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  .ctaArrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover .ctaArrow {
+    transform: translateX(3px);
+  }
+}
+
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid rgba(13, 39, 85, 0.2);
+  background: rgba(255, 255, 255, 0.6);
+  color: inherit;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(13, 39, 85, 0.35);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+}
+
+/* Mobile responsive collapse - ONLY on small phone screens (< 540px) */
+@supports (container-type: inline-size) {
+  @container heroContainer (max-width: 540px) {
+    .heroContainer {
+      flex-direction: column !important;
+      min-height: auto;
+    }
+
+    .imageLayer {
+      position: relative !important;
+      width: 100% !important;
+      height: 220px !important;
+      order: 1;
+    }
+
+    .contentPanel {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 24px 20px !important;
+      order: 2;
+    }
+
+    .headline {
+      font-size: 24px !important;
+    }
+
+    .highlightsContainer {
+      gap: 12px;
+    }
+
+    .ctaContainer {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+
+      .primaryCta,
+      .secondaryCta {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+/* Fallback media query (< 540px) */
+@media (max-width: 540px) {
+  .heroContainer {
+    flex-direction: column !important;
+    min-height: auto;
+  }
+
+  .imageLayer {
+    position: relative !important;
+    width: 100% !important;
+    height: 220px !important;
+    order: 1;
+  }
+
+  .contentPanel {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 24px 20px !important;
+    order: 2;
+  }
+
+  .headline {
+    font-size: 24px !important;
+  }
+
+  .ctaContainer {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+
+    .primaryCta,
+    .secondaryCta {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}

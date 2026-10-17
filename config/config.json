@@ -9,10 +9,19 @@
           "manifest": "./src/webparts/customLinks/CustomLinksWebPart.manifest.json"
         }
       ]
+    },
+    "imc-hero-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/imcHero/ImcHeroWebPart.js",
+          "manifest": "./src/webparts/imcHero/ImcHeroWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "CustomLinksWebPartStrings": "lib/webparts/customLinks/loc/{locale}.js"
+    "CustomLinksWebPartStrings": "lib/webparts/customLinks/loc/{locale}.js",
+    "ImcHeroWebPartStrings": "lib/webparts/imcHero/loc/{locale}.js"
   }
 }

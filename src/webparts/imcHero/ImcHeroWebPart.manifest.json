@@ -1,0 +1,47 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "88852031-1c11-4b82-a290-5571dce02313",
+  "alias": "ImcHeroWebPart",
+  "componentType": "WebPart",
+
+  "version": "*",
+  "manifestVersion": 2,
+
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart", "TeamsPersonalApp", "TeamsTab", "SharePointFullPage"],
+  "supportsThemeVariants": true,
+
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+    "group": { "default": "Advanced" },
+    "title": { "default": "IMC-Hero Banner" },
+    "description": { "default": "Hero section with 3 rows of text, image blending, and customizable colors" },
+    "officeFabricIconFontName": "PhotoVideoMedia",
+    "properties": {
+      "overlineText": "EMPLOYEE RESOURCE CENTER",
+      "headlineText": "Together Through Music",
+      "descriptionText": "Welcome to the IMC Employee Resource Center — your one-stop source for policies, benefits, forms, training, and more.",
+      "backgroundColor": "#e6edf8",
+      "accentColor": "#0d2755",
+      "textColorMode": "auto",
+      "layout": "textLeft",
+      "blendStyle": "smooth",
+      "heightMode": "medium",
+      "bottomSpacing": "flush",
+      "imageUrl": "",
+      "imageAlt": "IMC Dance Performance",
+      "showCta": false,
+      "ctaText": "Explore Programs",
+      "ctaUrl": "#",
+      "ctaOpenInNewTab": false,
+      "showSecondaryCta": false,
+      "secondaryCtaText": "Learn More",
+      "secondaryCtaUrl": "#",
+      "secondaryCtaOpenInNewTab": false,
+      "showHighlights": true,
+      "highlight1Text": "Support Our Community",
+      "highlight2Text": "Empower Young People",
+      "highlight3Text": "Make a Lasting Impact"
+    }
+  }]
+}
